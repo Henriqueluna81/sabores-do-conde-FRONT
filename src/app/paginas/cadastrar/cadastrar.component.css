@@ -1,0 +1,89 @@
+/* Estilo para o vídeo de fundo */
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1; /* Coloca o vídeo atrás de todo o conteúdo */
+    object-fit: cover; /* Redimensiona o vídeo para cobrir todo o container */
+}
+
+/* Estilo geral para o container do formulário */
+.cadastrar-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adicione uma cor de fundo opaca para melhorar a legibilidade */
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Coloca o formulário sobre o vídeo de fundo */
+}
+
+/* Estilo para o título do formulário */
+.cadastrar-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Estilo para os inputs do formulário */
+.cadastrar-container input[type="text"],
+.cadastrar-container input[type="password"],
+.cadastrar-container input[type="button"] {
+    width: calc(100% - 20px); /* Deixa uma margem interna de 10px */
+    margin: 10px auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box; /* Garante que o padding não aumente o tamanho total do input */
+}
+
+/* Estilo específico para os botões */
+.cadastrar-container .btn {
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.cadastrar-container .btn:hover {
+    background-color: #218838;
+}
+
+/* Estilo para inputs de texto e senha */
+.cadastrar-container input[type="text"]:focus,
+.cadastrar-container input[type="password"]:focus {
+    border-color: #80bdff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 480px) {
+    .cadastrar-container {
+        padding: 10px;
+    }
+
+    .cadastrar-container input[type="text"],
+    .cadastrar-container input[type="password"],
+    .cadastrar-container input[type="button"] {
+        width: calc(100% - 10px); /* Ajusta a largura para margens internas menores */
+    }
+}
+
+/* Garantindo altura mínima do body para a centralização */
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

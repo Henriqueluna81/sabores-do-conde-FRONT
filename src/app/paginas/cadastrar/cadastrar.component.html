@@ -1,0 +1,13 @@
+<video autoplay muted loop id="bg-video">
+    <source src="assets/Pizza/Pizza.mp4" type="video/mp4">
+</video>
+
+<form class="cadastrar-container">
+    <h1>CADASTRAR</h1>
+    <input type="text" #nome value="{{ usuario?.nome }}" placeholder="Nome..." onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32">
+    <input type="password" #senha value="{{ usuario?.senha }}" placeholder="Senha..." maxlength="12">
+    <input type="text" #cpf value="{{ usuario?.cpf }}" placeholder="xxx.xxx.xxx-xx" (input)="formatarCPF($event)">
+    <input type="text" #dataNascimento value="{{ usuario?.dataNascimento }}" placeholder="Data/Mês/Ano" (input)="formatarData($event)">
+    <input type="button" value="Cadastrar" class="btn" (click)="postUsuario(nome.value, senha.value, cpf.value, dataNascimento.value)" *ngIf="!usuario">
+    <input type="button" value="editar" class="btn" (click)="putUsuario(nome.value, senha.value, cpf.value, dataNascimento.value, usuario?.id)" *ngIf="usuario">
+</form>
