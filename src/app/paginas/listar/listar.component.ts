@@ -14,7 +14,7 @@ export class ListarComponent implements OnInit {
   usuarios!: any;
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/bd/listar')
+    this.http.get('http://localhost:8080/')
       .subscribe(data => {
         console.log(data)
         this.usuarios = data
@@ -23,9 +23,9 @@ export class ListarComponent implements OnInit {
 
   deleteUsuario(value: string) {
     console.log('oi')
-    this.http.delete(`http://localhost:8080/bd/delete/${value}`)
+    this.http.delete(`http://localhost:8080/${value}`)
       .subscribe(data => {
-        this.http.get('http://localhost:8080/bd/listar')
+        this.http.get('http://localhost:8080/')
           .subscribe(data => {
             console.log(data)
             this.usuarios = data

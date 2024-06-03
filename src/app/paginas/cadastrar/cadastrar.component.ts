@@ -59,11 +59,15 @@ export class CadastrarComponent implements OnInit {
     input.value = dataFormatada;
   }
 
-  postUsuario(nome: string , senha: string, cpf: string, dataNascimento: string) {
+  formatarEmail(event: Event) {
+
+  }
+
+  postUsuario(nome: string , senha: string, cpf: string, data_nascimento: string) {
     // Formata o CPF antes de enviar
     let cpfFormatado = cpf.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-    let userObj: any = { nome: nome, senha: senha, cpf: cpfFormatado, dataNascimento: dataNascimento };
-    this.http.post(`http://localhost:8080/bd/criar`, userObj)
+    let userObj: any = { nome: nome, senha: senha, cpf: cpfFormatado, data_nascimento: data_nascimento };
+    this.http.post(`http://localhost:8080/`, userObj)
     .subscribe({
       next: (data: any) => {
         console.log(data);
@@ -75,14 +79,14 @@ export class CadastrarComponent implements OnInit {
     });
   }
 
-  putUsuario(nome: string , senha: string, cpf: string, dataNascimento: string, id: string) {
+  putUsuario(nome: string , senha: string, cpf: string, data_nascimento: string, id: string) {
     // Formata o CPF antes de enviar
     let cpfFormatado = cpf.replace(/\D/g, ''); // Remove todos os caracteres não numéricos
-    let userObj: any = { nome: nome, senha: senha, cpf: cpfFormatado, dataNascimento: dataNascimento };
-    this.http.put('http://localhost:8080/bd/pegar/' + id, userObj)
+    let userObj: any = { nome: nome, cpf: cpfFormatado, data_nascimento: data_nascimento };
+    this.http.put('http://localhost:8080/' + id, userObj)
     .subscribe(data => {
       console.log(data);
-      this.router.navigateByUrl('/listar');
+      this.router.navigateByUrl('/');
     });
   }
 }
