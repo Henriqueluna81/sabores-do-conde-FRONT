@@ -5,10 +5,8 @@ body, header {
 
 /* Estilo geral para o cabeçalho */
 header {
-  background-color: rgba(249, 249, 249, 0.7); /* Ajustando a opacidade */
+  background-color: transparent; /* Ajustando a opacidade */
   padding: 20px 0;
-  border-bottom: 1px solid #ccc;
-  border-radius: 10px 10px 0 0; /* Simplificando o border-radius */
 }
 
 /* Estilo para a navegação */

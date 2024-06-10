@@ -10,6 +10,8 @@ import { CadastrarComponent } from './paginas/cadastrar/cadastrar.component';
 import { ListarComponent } from './paginas/listar/listar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiComponent } from './paginas/api/api.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,10 +26,12 @@ import { ApiComponent } from './paginas/api/api.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MatIconModule
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

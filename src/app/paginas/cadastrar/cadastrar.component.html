@@ -1,14 +1,48 @@
 <video autoplay muted loop id="bg-video">
-    <source src="assets/Pizza/Pizza.mp4" type="video/mp4">
+    <source src="assets/videos/video-cadastro.mp4" type="video/mp4">
 </video>
 
 <form class="cadastrar-container">
-    <h1>CADASTRAR</h1>
-    <input type="text" #nome value="{{ usuario?.nome }}" placeholder="Nome..." onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32">
-    <!-- <input type="password" #senha value="{{ usuario?.senha }}" placeholder="Senha..." maxlength="12"> -->
-    <input type="text" #cpf value="{{ usuario?.cpf }}" placeholder="xxx.xxx.xxx-xx" (input)="formatarCPF($event)">
-    <input type="text" #email value="{{ usuario?.email }}" placeholder="exemplo@exemplo.com" (input)="formatarEmail($event)">
-    <input type="text" #data_nascimento value="{{ usuario?.dataNascimento }}" placeholder="Dia/Mês/Ano" (input)="formatarData($event)">
-    <input type="button" value="Cadastrar" class="btn" (click)="postUsuario(nome.value, cpf.value, email.value, data_nascimento.value)" *ngIf="!usuario">
-    <input type="button" value="editar" class="btn" (click)="putUsuario(nome.value, cpf.value, email.value, data_nascimento.value, usuario?.id)" *ngIf="usuario">
+  <!-- <a href="" routerLink="/home">
+<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_backspace"></mat-icon>
+  </a> -->
+
+    <div id="titulo-forms">
+      <article class="parte-icon">
+        <mat-icon aria-hidden="false" class="icon-cadastro" fontIcon="keyboard_backspace" routerLink="/home"></mat-icon>
+      </article>
+      <article class="parte-text">
+        <h1>CADASTRAR</h1>
+      </article>
+    </div>
+
+    <article class="infor-cadastro">
+      <p>Nome</p>
+      <input class="input-cadastro" type="text" #nome value="{{ usuario?.nome }}" placeholder="nome" onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32">
+    </article>
+
+    <article class="infor-cadastro">
+      <p>CPF</p>
+      <input class="input-cadastro" type="text" #cpf value="{{ usuario?.cpf }}" placeholder="xxx.xxx.xxx-xx" (input)="formatarCPF($event)">
+  </article>
+  
+  <article class="infor-cadastro">
+    <p>E-mail</p>
+      <input class="input-cadastro" type="text" #email value="{{ usuario?.email }}" placeholder="exemplo@exemplo.com" (input)="formatarEmail($event)">
+  </article>
+  
+  <article class="infor-cadastro">
+    <p>Data</p>
+    <input class="input-cadastro" type="text" #data_nascimento value="{{ usuario?.dataNascimento }}" placeholder="dia/mês/ano" (input)="formatarData($event)">
+  </article>
+
+  <article class="infor-cadastro"> 
+    <p>Senha</p>
+    <input class="input-cadastro" type="password" #senha value="{{ usuario?.senha }}" placeholder="senha" maxlength="12">
+  </article>
+  
+  <!-- <input type="button" value="Cadastrar" class="btn" (click)="postUsuario(nome.value, cpf.value, email.value, data_nascimento.value)" *ngIf="!usuario"> -->
+    <button class="btn" (click)="postUsuario(nome.value, cpf.value, email.value, data_nascimento.value)" *ngIf="!usuario">cadastrar</button>
+  
+  <input type="button" value="editar" class="btn" (click)="putUsuario(nome.value, cpf.value, email.value, data_nascimento.value, usuario?.id)" *ngIf="usuario">
 </form>
