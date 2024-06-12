@@ -1,55 +1,115 @@
-/* user.component.css */
-
-/* Estilos para o vídeo de fundo */
+/* Estilização do Vídeo de Fundo */
 #bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
+  position: fixed; /* Posiciona o vídeo em relação à janela de visualização, permanecendo fixo ao rolar a página */
+  top: 0; /* Alinha o vídeo ao topo da janela de visualização */
+  left: 0; /* Alinha o vídeo à esquerda da janela de visualização */
+  width: 100%; /* Define a largura do vídeo para ocupar 100% da janela de visualização */
+  height: 100%; /* Define a altura do vídeo para ocupar 100% da janela de visualização */
+  object-fit: cover; /* Cobre completamente o contêiner do vídeo, cortando o excesso, se necessário */
+  z-index: -1; /* Coloca o vídeo atrás de outros elementos na página */
 }
 
-/* Estilos para a tabela */
+/* Estilização do Contêiner da Tabela */
+.table-container {
+  width: 80%; /* Define a largura do contêiner da tabela como 80% da largura do contêiner pai */
+  margin: 50px auto; /* Adiciona uma margem de 50px no topo e no fundo, e centraliza o contêiner horizontalmente */
+  background-color: rgba(0, 0, 0, 0.8); /* Define uma cor de fundo preta semi-transparente para o contêiner */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra ao contêiner para dar um efeito de elevação */
+  overflow-x: auto; /* Permite rolagem horizontal dentro do contêiner se o conteúdo for maior que a largura */
+  border-radius: 10px; /* Adiciona cantos arredondados ao contêiner */
+  margin-bottom: -1px; /* Ajusta a margem inferior do contêiner */
+}
+
+/* Estilização da Tabela */
 table {
-  width: 80%;
-  margin: 50px auto;
-  border-collapse: collapse;
-  background-color: rgba(255, 255, 255, 0.8);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%; /* Define a largura da tabela para ocupar 100% do contêiner pai */
+  border-collapse: collapse; /* Remove os espaços entre as bordas das células */
+  color: #fff; /* Define a cor do texto como branco */
+  text-align: center; /* Centraliza o texto */
 }
 
+/* Estilização das Células da Tabela */
 th, td {
-  padding: 12px 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
+  padding: 12px 15px; /* Adiciona preenchimento interno de 12px nas laterais superior e inferior e 15px nas laterais esquerda e direita */
+  text-align: center; /* Centraliza o texto */
+  border-bottom: 1px solid #ddd; /* Adiciona uma borda inferior às células */
 }
 
-/* Estilos específicos para os headers (th) */
+/* Estilização dos Cabeçalhos das Colunas */
 th {
-  background-color: #ddd(0, 255, 0, 0.3); /* verde mais transparente */
-  font-weight: bold;
-  text-transform: uppercase;
-  border-bottom: none; /* Remove a linha branca */
+  background-color: #28a745; /* Define a cor de fundo dos cabeçalhos das colunas como verde */
+  font-weight: bold; /* Define o texto dos cabeçalhos das colunas como negrito */
+  text-transform: uppercase; /* Transforma o texto dos cabeçalhos das colunas em letras maiúsculas */
+  border-bottom: none; /* Remove a borda inferior dos cabeçalhos das colunas */
 }
 
-tr:hover {
-  background-color: #f5f5f5;
+th:first-child {
+  border-top-left-radius: 10px; /* Adiciona um canto arredondado ao canto superior esquerdo do primeiro cabeçalho */
 }
 
-/* Estilos para botões de Delete e Edite */
+th:last-child {
+  border-top-right-radius: 10px; /* Adiciona um canto arredondado ao canto superior direito do último cabeçalho */
+}
+
+/* Estilização das Linhas da Tabela ao Passar o Mouse */
+tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* Altera a cor de fundo da linha da tabela quando o mouse passa sobre ela */
+}
+
+/* Estilização dos Botões de Deletar e Editar */
 .delete-button, .edit-button {
-  padding: 8px 12px;
-  display: inline-block;
-  cursor: pointer;
-  color: #fff;
+  padding: 8px 12px; /* Adiciona preenchimento interno aos botões */
+  cursor: pointer; /* Muda o cursor para uma mãozinha ao passar o mouse sobre os botões */
+  border: none; /* Remove a borda dos botões */
+  border-radius: 4px; /* Adiciona cantos arredondados aos botões */
+  color: #fff; /* Define a cor do texto dos botões como branco */
+  background-color: transparent; /* Define a cor de fundo dos botões como transparente */
+  transition: transform 0.2s; /* Adiciona uma transição suave à transformação dos botões */
 }
 
 .delete-button {
-  background-color: #ff9999;
+  background-color: #d80000; /* Define a cor de fundo do botão de deletar como vermelho */
 }
 
 .edit-button {
-  background-color: #99ccff;
+  background-color: #28a745; /* Define a cor de fundo do botão de editar como verde */
+}
+
+/* Adiciona um contêiner flexível para os botões */
+.actions {
+  display: flex;
+  gap: 5px; /* Espaço entre os botões */
+}
+
+/* Estilização dos Botões ao Passar o Mouse */
+.delete-button:hover, .edit-button:hover {
+  transform: scale(1.1); /* Aumenta o tamanho dos botões em 10% quando o mouse passa sobre eles */
+}
+
+/* Estilização Responsiva para Largura Máxima de 768px */
+@media (max-width: 768px) {
+  th, td {
+    font-size: 14px; /* Diminui o tamanho da fonte das células da tabela para 14px em telas com largura máxima de 768px */
+  }
+
+  .delete-button, .edit-button {
+    padding: 6px 10px; /* Diminui o preenchimento interno dos botões em telas com largura máxima de 768px */
+  }
+}
+
+/* Estilização Responsiva para Largura Máxima de 480px */
+@media (max-width: 480px) {
+  .table-container {
+    width: 100%; /* Define a largura do contêiner da tabela para 100% em telas com largura máxima de 480px */
+    margin: 20px 0; /* Ajusta a margem do contêiner em telas com largura máxima de 480px */
+  }
+
+  th, td {
+    font-size: 12px; /* Diminui o tamanho da fonte das células da tabela para 12px em telas com largura máxima de 480px */
+  }
+}
+
+/* Remoção da Borda Inferior da Última Linha da Tabela */
+tbody tr:last-child td {
+  border-bottom: none; /* Remove a borda inferior das células da última linha do corpo da tabela */
 }

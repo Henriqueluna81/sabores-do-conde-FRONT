@@ -7,13 +7,15 @@ import { FoodService } from '../../../food.service';
   styleUrl: './cardapio.component.css'
 })
 export class CardapioComponent {
-  foodImageUrl = ''; // Inicialize com uma string vazia
+  foodImageUrl!: any; // Inicialize com uma string vazia
 
   constructor(private foodService: FoodService) { }
-  
+
   ngOnInit() {
     this.foodService.getRandomFood().subscribe((response: any) => {
-      this.foodImageUrl = response.recipes[0].image;
+      console.log(response.meals)
+      this.foodImageUrl = response.meals;
+      // console.log(this.foodImageUrl)
     });
   }
 
