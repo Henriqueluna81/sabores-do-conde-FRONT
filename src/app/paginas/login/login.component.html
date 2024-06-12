@@ -1,0 +1,30 @@
+<video autoplay muted loop id="bg-video">
+  <!-- Fonte do vídeo -->
+  <source src="assets/videos/video-cadastro.mp4" type="video/mp4">
+</video>
+
+<!-- Formulário de login -->
+<form class="login-container">
+  <!-- Título do formulário -->
+  <div id="titulo-forms-login">
+    <article class="parte-icon-login">
+      <mat-icon aria-hidden="false" class="icon-login" fontIcon="keyboard_backspace" routerLink="/home"></mat-icon>
+    </article>
+    <article class="parte-text-login">
+      <h1>Entrar</h1>
+    </article>
+  </div>
+
+<article class="infor-login">
+  <p>Nome</p>  
+  <input class="input-login" type="text" placeholder="nome"onkeypress="return event.charCode >= 65 && event.charCode <= 90 || event.charCode >= 97 && event.charCode <= 122 || event.charCode == 32">
+</article>
+
+  <article class="infor-login">
+    <p>Senha</p>
+    <input class="input-login" type="password" placeholder="senha" minlength="12" maxlength="12">
+  </article>
+
+  <!-- Botão para fazer login -->
+  <button class="bng-login" type="submit">Entrar</button>
+</form>

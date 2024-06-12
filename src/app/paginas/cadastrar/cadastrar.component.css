@@ -20,7 +20,7 @@ body, html {
 /* Estilo geral para o container do formulário */
 .cadastrar-container {
     max-width: 380px;
-    height: 500px;
+    max-height: 500px;
     background: #282828; /* Adicione uma cor de fundo opaca para melhorar a legibilidade */
     border-radius: 10px;
     padding: 15px;
@@ -58,6 +58,7 @@ h1{
 /* Estilo para os inputs do formulário */
 .infor-cadastro{
   width: calc(100% - 55px);
+  margin-bottom: 15px;
 }
 
 p{
@@ -88,8 +89,6 @@ p{
 }
 
 .btn:hover {
-    /* background-color: #0a8d17;
-    box-shadow: 0 0 10px rgba(14, 242, 25, 0.5); */
     background-color: #0f9150;
     box-shadow: 0 0 10px rgba(10, 190, 109, 0.5);
 }
@@ -98,7 +97,6 @@ p{
 .input-cadastro:focus {
     border: 2px solid #1b7ce2;
     outline: none;
-    box-shadow: 0 0 5px rgba(128, 189, 255, 0.5);
 }
 
 /* Estilo responsivo para telas menores */

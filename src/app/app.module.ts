@@ -12,6 +12,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiComponent } from './paginas/api/api.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import { LoginComponent } from './paginas/login/login.component';
+import { InicioComponent } from './paginas/inicio/inicio.component';
+import { FormsModule } from '@angular/forms';
+import { CardapioComponent } from './paginas/cardapio/cardapio.component'; // Adicione o módulo FormsModule
+
 
 @NgModule({
   declarations: [
@@ -21,13 +28,19 @@ import {MatIconModule} from '@angular/material/icon';
     HomeComponent,
     CadastrarComponent,
     ListarComponent,
-    ApiComponent
+    ApiComponent,
+    LoginComponent,
+    InicioComponent,
+    CardapioComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    MatIconModule
+    MatIconModule,
+    MatToolbarModule,
+    MatButtonModule,
+    FormsModule // Adicione o módulo FormsModule
   ],
   providers: [
     provideClientHydration(),

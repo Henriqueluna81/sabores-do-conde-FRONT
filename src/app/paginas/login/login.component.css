@@ -1,0 +1,118 @@
+/* Define o estilo para o corpo e a página HTML */
+body,
+html {
+  height: 100%; /* Define a altura do corpo e do HTML como 100% */
+  margin: 0; /* Remove as margens padrão */
+  display: flex; /* Usa um layout flexível */
+  align-items: center; /* Centraliza verticalmente os itens */
+  justify-content: center; /* Centraliza horizontalmente os itens */
+  font-family: "Arial", sans-serif; /* Define a fonte do texto */
+}
+
+/* Estiliza o vídeo de fundo */
+#bg-video {
+  position: fixed; /* Fixa o vídeo em relação à janela do navegador */
+  top: 0; /* Alinha o vídeo ao topo */
+  left: 0; /* Alinha o vídeo à esquerda */
+  min-width: 100%; /* Garante que o vídeo ocupe no mínimo 100% da largura da tela */
+  min-height: 100%; /* Garante que o vídeo ocupe no mínimo 100% da altura da tela */
+  z-index: -1; /* Coloca o vídeo atrás de outros elementos */
+  object-fit: cover; /* Faz o vídeo cobrir toda a área, cortando partes se necessário */
+}
+
+/* Estiliza o container do formulário de login */
+#titulo-forms-login {
+  display: flex;
+  width: calc(100% - 20px);
+  height: 32px;
+  gap: 32%;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.login-container {
+  max-width: 380px;
+  max-height: 500px;
+  background: #282828; /* Adicione uma cor de fundo opaca para melhorar a legibilidade */
+  border-radius: 10px;
+  padding: 15px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* Estiliza o título dentro do container de login */
+.login-container h1 {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.icon-login{
+  color: #676767;
+  font-size: 32px;
+  cursor: pointer;
+}
+
+.infor-login {
+  width: calc(100% - 55px);
+  margin-bottom: 20px;
+}
+
+p {
+  margin-bottom: 0px;
+  color: #ccc;
+}
+
+/* Estiliza os inputs de texto e senha dentro do container de login */
+.input-login {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  box-sizing: border-box;
+  }
+  /* Estiliza os inputs de texto e senha quando estão focados */
+.input-login:focus {
+  border: 2px solid #1b7ce2;
+  outline: none;
+}
+
+/* Estiliza o botão dentro do container de login */
+.bng-login {
+  background-color: #0dc266;
+  color: white;
+  cursor: pointer;
+  border: none;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+.bng-login:hover {
+  background-color: #0f9150;
+  box-shadow: 0 0 10px rgba(10, 190, 109, 0.5);
+}
+
+
+
+
+/* Regras de estilo para telas com largura máxima de 480px */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 10px; /* Reduz o padding do container em telas pequenas */
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    width: calc(
+      100% - 10px
+    ); /* Ajusta a largura dos inputs para telas pequenas */
+  }
+}

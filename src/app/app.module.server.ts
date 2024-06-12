@@ -3,12 +3,16 @@ import { ServerModule } from '@angular/platform-server';
 
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FoodService } from '../food.service';
 
 @NgModule({
   imports: [
     AppModule,
     ServerModule,
+    HttpClientModule // Adicione esta linha
   ],
+  providers: [FoodService],
   bootstrap: [AppComponent],
 })
 export class AppServerModule {}

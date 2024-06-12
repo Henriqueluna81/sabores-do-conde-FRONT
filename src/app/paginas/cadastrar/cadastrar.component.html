@@ -3,9 +3,7 @@
 </video>
 
 <form class="cadastrar-container">
-  <!-- <a href="" routerLink="/home">
-<mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="keyboard_backspace"></mat-icon>
-  </a> -->
+
 
     <div id="titulo-forms">
       <article class="parte-icon">
@@ -25,24 +23,24 @@
       <p>CPF</p>
       <input class="input-cadastro" type="text" #cpf value="{{ usuario?.cpf }}" placeholder="xxx.xxx.xxx-xx" (input)="formatarCPF($event)">
   </article>
-  
+
   <article class="infor-cadastro">
     <p>E-mail</p>
       <input class="input-cadastro" type="text" #email value="{{ usuario?.email }}" placeholder="exemplo@exemplo.com" (input)="formatarEmail($event)">
   </article>
-  
+
   <article class="infor-cadastro">
     <p>Data</p>
     <input class="input-cadastro" type="text" #data_nascimento value="{{ usuario?.dataNascimento }}" placeholder="dia/mês/ano" (input)="formatarData($event)">
   </article>
 
-  <article class="infor-cadastro"> 
+  <article class="infor-cadastro">
     <p>Senha</p>
     <input class="input-cadastro" type="password" #senha value="{{ usuario?.senha }}" placeholder="senha" maxlength="12">
   </article>
-  
+
   <!-- <input type="button" value="Cadastrar" class="btn" (click)="postUsuario(nome.value, cpf.value, email.value, data_nascimento.value)" *ngIf="!usuario"> -->
-    <button class="btn" (click)="postUsuario(nome.value, cpf.value, email.value, data_nascimento.value)" *ngIf="!usuario">cadastrar</button>
-  
+    <button class="btn" (click)="postUsuario(nome.value, cpf.value, email.value, data_nascimento.value)" *ngIf="!usuario" routerLink="/inicio" >cadastrar</button>
+
   <input type="button" value="editar" class="btn" (click)="putUsuario(nome.value, cpf.value, email.value, data_nascimento.value, usuario?.id)" *ngIf="usuario">
 </form>
